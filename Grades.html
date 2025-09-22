@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Grades & Reports</title>
+<link rel="stylesheet" href="Student.css" />
+</head>
+<body>
+<div class="app">
+ 
+    <!-- Sidebar -->
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-logo">S</div>
+<div>
+<h1>Springfield High</h1>
+<div style="font-size:12px;opacity:.9">Student Portal</div>
+</div>
+</div>
+ 
+      <nav class="nav">
+<a href="student.html">🏠 Dashboard</a>
+<a href="Grades.html" class="is-active">📊 Grades & Reports</a>
+<a href="#" title="Placeholder link">📚 Library</a>
+<a href="#" title="Placeholder link">📝 Assignments</a>
+</nav>
+</aside>
+ 
+    <!-- Main -->
+<main class="main">
+<header class="topbar">
+<div class="title">Grades & Reports</div>
+<div class="profile">
+<div class="id">
+<strong>Akib Rahman</strong>
+<span>ID: STU-2025-1042</span>
+</div>
+<div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200');"></div>
+</div>
+</header>
+ 
+      <section class="container">
+ 
+        <!-- Search specific subject -->
+<div class="card">
+<div class="kicker">Search</div>
+<h3>Find Grade for a Specific Subject</h3>
+<p class="sub">Type the Subject Name, Subject Code, and Section (design only; no JS yet)</p>
+ 
+          <form class="form" action="#">
+<div class="field" style="grid-column: span 5">
+<label for="subjectName">Subject Name</label>
+<input id="subjectName" class="input" type="text" placeholder="e.g., Calculus I" />
+</div>
+<div class="field" style="grid-column: span 4">
+<label for="subjectCode">Subject Code</label>
+<input id="subjectCode" class="input" type="text" placeholder="e.g., MAT121" />
+</div>
+<div class="field" style="grid-column: span 3">
+<label for="section">Section</label>
+<input id="section" class="input" type="text" placeholder="e.g., B" />
+</div>
+<div class="actions" style="grid-column: span 12">
+<button class="btn primary" type="submit">Search</button>
+<a class="btn" href="#full-report">View Full Report</a>
+</div>
+</form>
+ 
+          <!-- Static sample result (placeholder) -->
+<div style="margin-top:14px">
+<table class="table table-sm">
+<thead>
+<tr>
+<th>Subject</th>
+<th>Code</th>
+<th>Section</th>
+<th>Credits</th>
+<th>Mid</th>
+<th>Final</th>
+<th>Grade</th>
+<th>GPA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calculus I</td>
+<td>MAT121</td>
+<td>B</td>
+<td>3</td>
+<td>82</td>
+<td>88</td>
+<td>A-</td>
+<td>3.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+ 
+        <!-- Full Grade Report -->
+<div id="full-report" class="card">
+<div class="kicker">Transcript (Current Term)</div>
+<h3>Full Grade Report</h3>
+<p class="sub">All enrolled subjects with final grades</p>
+ 
+          <table class="table table-sm">
+<thead>
+<tr>
+<th>Subject</th>
+<th>Code</th>
+<th>Section</th>
+<th>Credits</th>
+<th>Attendance</th>
+<th>Mid</th>
+<th>Final</th>
+<th>Grade</th>
+<th>GPA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English Composition</td>
+<td>ENG101</td>
+<td>A</td>
+<td>3</td>
+<td>96%</td>
+<td>84</td>
+<td>90</td>
+<td>A-</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td>Calculus I</td>
+<td>MAT121</td>
+<td>B</td>
+<td>3</td>
+<td>92%</td>
+<td>82</td>
+<td>88</td>
+<td>A-</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td>Intro to Programming</td>
+<td>CSE110</td>
+<td>C</td>
+<td>3</td>
+<td>98%</td>
+<td>90</td>
+<td>93</td>
+<td>A</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>Physics I</td>
+<td>PHY115</td>
+<td>A</td>
+<td>3</td>
+<td>94%</td>
+<td>79</td>
+<td>86</td>
+<td>B+</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>World History</td>
+<td>HIS140</td>
+<td>A</td>
+<td>2</td>
+<td>97%</td>
+<td>85</td>
+<td>89</td>
+<td>A-</td>
+<td>3.7</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<th colspan="3" style="text-align:right">Totals</th>
+<th>14</th>
+<th></th>
+<th colspan="2" style="text-align:right">Term GPA</th>
+<th colspan="2">3.68</th>
+</tr>
+</tfoot>
+</table>
+ 
+          <div class="actions" style="margin-top:14px">
+<a class="btn" href="student-dashboard.html">← Back to Dashboard</a>
+</div>
+</div>
+ 
+      </section>
+</main>
+</div>
+</body>
+</html>

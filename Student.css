@@ -1,0 +1,175 @@
+/* ---- Theme ---- */
+:root{
+  --matcha-700:#5e7b65;      /* deep matcha */
+  --matcha-600:#749a7a;
+  --matcha-500:#8bb78f;
+  --matcha-400:#a3c9a8;      /* classic matcha */
+  --matcha-300:#c8e2cd;      /* light matcha */
+  --ink:#1f2937;
+  --muted:#6b7280;
+  --bg:#f7faf7;
+  --card:#ffffff;
+  --ring:#e5efe6;
+  --accent:#3b82f6;          /* a calm blue for links */
+  --radius:16px;
+  --shadow:0 8px 24px rgba(0,0,0,.06);
+}
+ 
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.4;
+}
+ 
+/* ---- Layout Shell ---- */
+.app{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  min-height:100dvh;
+}
+.sidebar{
+  background:linear-gradient(180deg,var(--matcha-400),var(--matcha-500));
+  color:#0b1a12;
+  padding:24px 18px;
+  border-right:1px solid rgba(0,0,0,.04);
+}
+.brand{
+  display:flex; align-items:center; gap:10px; margin-bottom:24px;
+}
+.brand-logo{
+  width:40px; height:40px; border-radius:10px; background:#fff3; display:grid; place-items:center;
+  border:1px solid #ffffff44; color:#0b1a12; font-weight:700;
+}
+.brand h1{
+  font-size:18px; margin:0; line-height:1.1;
+}
+.nav{
+  display:flex; flex-direction:column; gap:8px; margin-top:8px;
+}
+.nav a{
+  display:flex; align-items:center; gap:10px;
+  text-decoration:none;
+  color:#0b1a12;
+  padding:10px 12px;
+  border-radius:10px;
+  font-weight:600;
+  background:rgba(255,255,255,.18);
+  border:1px solid #ffffff33;
+  transition:transform .06s ease, background .2s ease;
+}
+.nav a:hover{ background:rgba(255,255,255,.28); transform:translateY(-1px) }
+.nav a.is-active{ background:#fff; border-color:#fff; }
+ 
+.main{
+  display:flex; flex-direction:column; min-width:0;
+}
+.topbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 20px; border-bottom:1px solid var(--ring); background:#fff; position:sticky; top:0; z-index:10;
+}
+.topbar .title{
+  font-size:20px; font-weight:700;
+}
+.profile{
+  display:flex; align-items:center; gap:12px;
+}
+.profile .id{
+  display:flex; flex-direction:column; align-items:flex-end;
+  font-size:12px; color:var(--muted);
+}
+.profile .id strong{ color:var(--ink); font-size:13px }
+.avatar{
+  width:40px; height:40px; border-radius:50%;
+  background:var(--matcha-300) center/cover no-repeat;
+  border:2px solid var(--ring);
+}
+ 
+/* ---- Content ---- */
+.container{
+  padding:22px;
+  display:grid; gap:24px;
+}
+.kicker{
+  font-size:13px; color:var(--muted); margin-bottom:6px;
+}
+.cards{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:18px;
+}
+.card{
+  grid-column: span 12;
+  background:var(--card);
+  border:1px solid var(--ring);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+.card h3{ margin:4px 0 12px; font-size:16px }
+.card .sub{ color:var(--muted); font-size:13px; margin-top:-4px; margin-bottom:10px }
+ 
+/* Subject chips */
+.subjects{
+  display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:12px;
+}
+.subject{
+  border:1px solid var(--ring); border-radius:12px; padding:12px;
+  display:flex; align-items:center; gap:10px; background:#fff;
+}
+.badge{
+  font-size:11px; padding:4px 8px; border-radius:999px; background:var(--matcha-300); color:#0b1a12; font-weight:700;
+}
+ 
+/* Routine table */
+.table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  overflow:hidden; border-radius:12px; border:1px solid var(--ring);
+}
+.table th, .table td{
+  text-align:left; padding:12px 14px; background:#fff;
+  border-bottom:1px solid var(--ring);
+}
+.table th{ background:#f2f7f3; font-size:13px; color:#2a3b2f }
+.table tr:last-child td{ border-bottom:0 }
+ 
+/* Buttons & links */
+.actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.btn{
+  appearance:none; border:1px solid var(--ring); background:#fff;
+  padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none; color:var(--ink);
+}
+.btn.primary{
+  background:var(--matcha-400);
+  border-color:var(--matcha-500);
+}
+.btn:hover{ filter:brightness(.98) }
+ 
+/* ---- Grades Page ---- */
+.form{
+  display:grid; grid-template-columns: repeat(12,1fr); gap:14px;
+}
+.field{
+  grid-column: span 12;
+  display:flex; flex-direction:column; gap:6px;
+}
+label{ font-size:13px; color:var(--muted) }
+.input{
+  border:1px solid var(--ring); border-radius:12px; padding:12px 14px; background:#fff;
+  font-size:14px;
+}
+.table-sm td, .table-sm th{ padding:10px 12px; }
+ 
+/* ---- Responsive ---- */
+@media (min-width: 860px){
+  .card.cols-6{ grid-column: span 6; }
+  .card.cols-7{ grid-column: span 7; }
+  .card.cols-5{ grid-column: span 5; }
+}
+@media (max-width: 760px){
+  .app{ grid-template-columns: 1fr }
+  .sidebar{ position:sticky; top:0; z-index:20; border-right:none; border-bottom:1px solid #ffffff55 }
+}
